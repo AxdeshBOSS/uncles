@@ -1,0 +1,112 @@
+#backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; 
+    overflow: hidden; 
+}
+#backgorundVideo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+    z-index: 1; 
+}
+.glow-text {
+    font-size: 52px;
+    text-align: center;
+    color: #FFF;
+    margin: 50vh auto;
+    transform: translateY(-50%);
+    position: relative;
+    z-index: 1;
+    animation: earthquake 0.7s infinite;
+    text-shadow: 0 0 20px rgba(204, 0, 102, 3); 
+}
+@keyframes earthquake {
+    0% { transform: translateY(-50%) translate(10px, 10px); }
+    10% { transform: translateY(-50%) translate(-10px, -10px); }
+    20% { transform: translateY(-50%) translate(10px, -10px); }
+    30% { transform: translateY(-50%) translate(-10px, 10px); }
+    40% { transform: translateY(-50%) translate(15px, 0); }
+    50% { transform: translateY(-50%) translate(0, 15px); }
+    60% { transform: translateY(-50%) translate(-15px, 0); }
+    70% { transform: translateY(-50%) translate(0, -15px); }
+    80% { transform: translateY(-50%) translate(15px, 15px); }
+    90% { transform: translateY(-50%) translate(-15px, -15px); }
+    100% { transform: translateY(-50%) translate(15px, 15px); }
+}
+
+#muteButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#muteButton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#muteButton i {
+    color: #FFF;  
+}
+#volumeControl {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+#muteButton {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#muteButton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#muteButton i {
+    color: #FFF;
+}
+.volume-slider-container {
+    display: none; 
+    margin-left: 10px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+    transition: opacity 0.3s;
+}
+
+#volumeControl:hover .volume-slider-container {
+    display: block; 
+}
+body {
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+}
+.glow-text {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
